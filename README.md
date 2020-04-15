@@ -8,7 +8,6 @@ $ git clone https://github.com/roboticsengineer93/vins-fusion-gpu-tx2.git
 $ cd vins-fusion-gpu-tx2/
 $ installROS.sh -p  ros-melodic-desktop-full
 $ setupCatkinWorkspace.sh
-
 ```
 ### Eigen 
 ```
