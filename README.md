@@ -4,6 +4,7 @@ Installation step of vins-fusion gpu version on Nvidia Jetson TX2 ( JP 4.2.2)
 
 ### ROS- Melodic
 ```
+$ cd ~/Downloads/
 $ git clone https://github.com/roboticsengineer93/vins-fusion-gpu-tx2.git
 $ cd vins-fusion-gpu-tx2/
 $ installROS.sh -p  ros-melodic-desktop-full
@@ -24,6 +25,7 @@ $ pkg-config --modversion eigen3 # Check Eigen Version
 ### Ceres solver 
 
 ```
+$ cd ~/Downloads/
 $ sudo apt-get install -y cmake libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev
 $ wget http://ceres-solver.org/ceres-solver-1.14.0.tar.gz
 $ tar zxf ceres-solver-1.14.0.tar.gz
