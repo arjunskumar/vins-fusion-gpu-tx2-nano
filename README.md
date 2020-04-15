@@ -12,7 +12,7 @@ $ setupCatkinWorkspace.sh
 ```
 ### Eigen 
 ```
-$  sudo apt-get remove libeigen3-dev #  Remove preb-uilt Eigen
+$ sudo apt-get remove libeigen3-dev #  Remove preb-uilt Eigen
 $ cd ~/Downloads/
 $ wget -O eigen.zip http://bitbucket.org/eigen/eigen/get/3.3.7.zip #check version
 $ unzip eigen.zip -d eigen-3.3.7
@@ -20,7 +20,7 @@ $ mkdir eigen-build && cd eigen-build
 $ cmake ../eigen-3.3.7/ && sudo make install
 $ pkg-config --modversion eigen3 # Check Eigen Version
 ```
-![Drag Racing](./img/md1.png)
+![Eigen-img](./img/md1.png)
 
 ### Ceres solver 
 
