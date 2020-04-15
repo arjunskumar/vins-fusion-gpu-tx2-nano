@@ -1,8 +1,16 @@
 # vins-fusion-gpu-tx2
 Installation step of vins-fusion gpu version on Nvidia Jetson TX2 ( JP 4.2.2)
 # Prerequisites
-## Ceres solver and Eigen : Mandatory for VINS
-### Eigen home
+
+### ROS- Melodic
+```
+$ git clone https://github.com/roboticsengineer93/vins-fusion-gpu-tx2.git
+$ cd vins-fusion-gpu-tx2/
+$ installROS.sh -p  ros-melodic-desktop-full
+$ setupCatkinWorkspace.sh
+
+```
+### Eigen 
 ```
 $  sudo apt-get remove libeigen3-dev #  Remove preb-uilt Eigen
 $ cd ~/Downloads/
@@ -14,7 +22,7 @@ $ pkg-config --modversion eigen3 # Check Eigen Version
 ```
 ![Drag Racing](./img/md1.png)
 
-### Ceres solver home
+### Ceres solver 
 
 ```
 $ sudo apt-get install -y cmake libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev
