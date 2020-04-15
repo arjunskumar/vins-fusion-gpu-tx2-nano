@@ -12,7 +12,7 @@ $ mkdir eigen-build && cd eigen-build
 $ cmake ../eigen-3.3.7/ && sudo make install
 $ pkg-config --modversion eigen3 # Check Eigen Version
 ```
-![Drag Racing](md1.png)
+![Drag Racing](./img/md1.png)
 
 ### Ceres solver home
 
