@@ -33,4 +33,6 @@ $ cmake ../ceres-solver-1.14.0 -DEXPORT_BUILD_DIR=ON -DCMAKE_INSTALL_PREFIX="../
 $ make -j3 # 8 : number of cores
 $ make test
 $ make install
+$ bin/simple_bundle_adjuster ../ceres-solver-1.14.0/data/problem-16-22106-pre.txt # to check version
 ```
+![ceres-solver-img](./img/md2.png)
