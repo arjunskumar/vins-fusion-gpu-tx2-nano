@@ -105,8 +105,7 @@ $ ./installROS.sh
 $ ./setupCatkinWorkspace.sh
 ```
 
-### Install ROS dependencies
-###  Build CV-Bridge Manually
+###   CV-Bridge 
 ```
 $ cd ~/catkin_ws/src && git clone https://github.com/ros-perception/vision_opencv
 $ gedit vision_opencv/cv_bridge/CMakeLists.txt
@@ -150,4 +149,4 @@ include(/usr/local/share/OpenCV/OpenCVConfig.cmake)
 $ cd ~/catkin_ws/
 $ catkin_make
 ```
-
+~[vins-fusion-img](./img/md4.png)
