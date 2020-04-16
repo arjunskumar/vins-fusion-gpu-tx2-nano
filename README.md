@@ -2,7 +2,7 @@
 Installation step of vins-fusion gpu version on Nvidia Jetson TX2 ( JP 4.2.2)
 # Prerequisites
 
-### ROS- Melodic
+### ROS-Melodic
 ```
 $ cd ~/Downloads/
 $ git clone https://github.com/roboticsengineer93/vins-fusion-gpu-tx2.git
@@ -62,7 +62,7 @@ $ cd /usr/lib/aarch64-linux-gnu/
 $ sudo ln -sf libGL.so.1.0.0 libGL.so
 $ sudo vim /usr/local/cuda/include/cuda_gl_interop.h
 
-#Here’s how the relevant lines (line #62~68) of cuda_gl_interop.h look like after the modification.
+# Comment (line #62~68) of cuda_gl_interop.h 
 
 //#if defined(__arm__) || defined(__aarch64__)
 //#ifndef GL_VERSION
@@ -74,6 +74,7 @@ $ sudo vim /usr/local/cuda/include/cuda_gl_interop.h
 ```
 
 ```
+# Then once linking is done, go to Downloads ro begin opencv installation
 $ cd ~/Downloads/
 $ wget -O opencv.zip https://github.com/opencv/opencv/archive/3.4.1.zip # check version
 $ unzip opencv.zip
@@ -94,5 +95,6 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CUDA_NVCC_FLAGS="--expt-relaxed-constexpr" \
         -D WITH_TBB=ON \
          ../
+$ make  # running in single core is good to resolve the compilation issues         
 $ sudo make install
 ```
