@@ -33,7 +33,7 @@ $ mkdir ceres-bin
 $ mkdir solver && cd ceres-bin
 $ cmake ../ceres-solver-1.14.0 -DEXPORT_BUILD_DIR=ON -DCMAKE_INSTALL_PREFIX="../solver" 
   #good for build without being root privileged and at wanted directory
-$ make -j3 # 8 : number of cores
+$ make -j3 # 6 : number of cores
 $ make test
 $ make install
 $ bin/simple_bundle_adjuster ../ceres-solver-1.14.0/data/problem-16-22106-pre.txt # to check version
@@ -43,11 +43,41 @@ $ bin/simple_bundle_adjuster ../ceres-solver-1.14.0/data/problem-16-22106-pre.tx
 ## Opencv
 
 ```
-$ cd /usr/lib/aarch64-linux-gnu/
-$ sudo ln -sf libGL.so.1.0.0 libGL.so
+$ sudo apt-get purge libopencv* python-opencv # remove prebuilt opencv
+$ sudo apt-get update
+$ sudo apt-get install -y build-essential pkg-config
+$ sudo apt-get install -y cmake libavcodec-dev libavformat-dev libavutil-dev \
+    libglew-dev libgtk2.0-dev libgtk-3-dev libjpeg-dev libpng-dev libpostproc-dev \
+    libswscale-dev libtbb-dev libtiff5-dev libv4l-dev libxvidcore-dev \
+    libx264-dev qt5-default zlib1g-dev libgl1 libglvnd-dev pkg-config \
+    libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev mesa-utils 
+    ## libeigen3-dev # recommend to build from source : http://eigen.tuxfamily.org/index.php?title=Main_Page
+$ sudo apt-get install python2.7-dev python3-dev python-numpy python3-numpy
 ```
 
 ```
+# To fix OpenGL related compilation problems 
+
+$ cd /usr/lib/aarch64-linux-gnu/
+$ sudo ln -sf libGL.so.1.0.0 libGL.so
+$ sudo vim /usr/local/cuda/include/cuda_gl_interop.h
+
+#Here’s how the relevant lines (line #62~68) of cuda_gl_interop.h look like after the modification.
+
+//#if defined(__arm__) || defined(__aarch64__)
+//#ifndef GL_VERSION
+//#error Please include the appropriate gl headers before including cuda_gl_interop.h
+//#endif
+//#else
+ #include <GL/gl.h>
+//#endif
+```
+
+```
+$ cd ~/Downloads/
+$ wget -O opencv.zip https://github.com/opencv/opencv/archive/3.4.1.zip # check version
+$ unzip opencv.zip
+$ cd opencv-3.4.1/ && mkdir build && cd build
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D WITH_CUDA=ON \
@@ -64,5 +94,5 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CUDA_NVCC_FLAGS="--expt-relaxed-constexpr" \
         -D WITH_TBB=ON \
          ../
-
+$ sudo make install
 ```
