@@ -2,14 +2,7 @@
 Installation step of vins-fusion gpu version on Nvidia Jetson TX2 ( JP 4.2.2)
 # Prerequisites
 
-### ROS-Melodic
-```
-$ cd ~/Downloads/
-$ git clone https://github.com/roboticsengineer93/vins-fusion-gpu-tx2.git
-$ cd vins-fusion-gpu-tx2/
-$ installROS.sh -p  ros-melodic-desktop-full
-$ setupCatkinWorkspace.sh
-```
+
 ### Eigen 
 ```
 $ sudo apt-get remove libeigen3-dev #  Remove preb-uilt Eigen
@@ -23,7 +16,6 @@ $ pkg-config --modversion eigen3 # Check Eigen Version
 ![Eigen-img](./img/md1.png)
 
 ### Ceres solver 
-
 ```
 $ cd ~/Downloads/
 $ sudo apt-get install -y cmake libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev
@@ -41,7 +33,6 @@ $ bin/simple_bundle_adjuster ../ceres-solver-1.14.0/data/problem-16-22106-pre.tx
 ![ceres-solver-img](./img/md2.png)
 
 ## Opencv
-
 ```
 # remove prebuilt opencv
 $ sudo apt-get purge libopencv* python-opencv 
@@ -100,4 +91,15 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
          ../
 $ make  # running in single core is good to resolve the compilation issues         
 $ sudo make install
+$ pkg-config --modversion opencv # Check opencv Version
+```
+![opencv-img](./img/md3.png)
+
+### ROS-Melodic
+```
+$ cd ~/Downloads/
+$ git clone https://github.com/roboticsengineer93/vins-fusion-gpu-tx2.git
+$ cd vins-fusion-gpu-tx2/
+$ installROS.sh -p  ros-melodic-desktop-full
+$ setupCatkinWorkspace.sh
 ```
