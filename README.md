@@ -39,3 +39,30 @@ $ make install
 $ bin/simple_bundle_adjuster ../ceres-solver-1.14.0/data/problem-16-22106-pre.txt # to check version
 ```
 ![ceres-solver-img](./img/md2.png)
+
+## Opencv
+
+```
+$ cd /usr/lib/aarch64-linux-gnu/
+$ sudo ln -sf libGL.so.1.0.0 libGL.so
+```
+
+```
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+        -D CMAKE_INSTALL_PREFIX=/usr/local \
+        -D WITH_CUDA=ON \
+        -D CUDA_ARCH_BIN=6.2 \
+        -D CUDA_ARCH_PTX="" \
+        -D ENABLE_FAST_MATH=ON \
+        -D CUDA_FAST_MATH=ON \
+        -D WITH_CUBLAS=ON \
+        -D WITH_LIBV4L=ON \
+        -D WITH_GSTREAMER=ON \
+        -D WITH_GSTREAMER_0_10=OFF \
+        -D WITH_QT=ON \
+        -D WITH_OPENGL=ON \
+        -D CUDA_NVCC_FLAGS="--expt-relaxed-constexpr" \
+        -D WITH_TBB=ON \
+         ../
+
+```
