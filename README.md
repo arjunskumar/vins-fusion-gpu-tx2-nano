@@ -104,3 +104,50 @@ $ chmod a+x installROS.sh setupCatkinWorkspace.sh
 $ ./installROS.sh 
 $ ./setupCatkinWorkspace.sh
 ```
+
+### Install ROS dependencies
+###  Build CV-Bridge Manually
+```
+$ cd ~/catkin_ws/src && git clone https://github.com/ros-perception/vision_opencv
+$ gedit vision_opencv/cv_bridge/CMakeLists.txt
+
+# Edit OpenCV PATHS in CMakeLists and include cmake file
+
+find_package(OpenCV 3 REQUIRED PATHS /usr/local/share/OpenCV NO_DEFAULT_PATH
+  COMPONENTS
+    opencv_core
+    opencv_imgproc
+    opencv_imgcodecs
+  CONFIG
+)
+include(/usr/local/share/OpenCV/OpenCVConfig.cmake) #under catkin_python_setup()
+
+# Save and close CMakeLists
+#  Build the package
+
+$ cd .. && catkin_make
+```
+### Vins-Fusion GPU
+```
+$ cd ~/catkin_ws/src && git clone https://github.com/pjrambo/VINS-Fusion-gpu #GPU
+
+$ sudo apt-get install ros-melodic-tf
+$ sudo apt-get install ros-melodic-image-transport
+
+# Edit CMakeLists.txt for loop_fusion and vins_estimator
+$ cd ~/catkin_ws/src/VINS-Fusion-gpu/loop_fusion && gedit CMakeLists.txt
+
+##For loop_fusion : line 19
+#find_package(OpenCV)
+include(/usr/local/share/OpenCV/OpenCVConfig.cmake)
+
+$ cd ~/catkin_ws/src/VINS-Fusion-gpu/vins_estimator && gedit CMakeLists.txt
+
+##For vins_estimator : line 20
+#find_package(OpenCV REQUIRED)
+include(/usr/local/share/OpenCV/OpenCVConfig.cmake)
+
+$ cd ~/catkin_ws/
+$ catkin_make
+```
+
