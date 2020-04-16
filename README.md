@@ -100,6 +100,7 @@ $ pkg-config --modversion opencv # Check opencv Version
 $ cd ~/Downloads/
 $ git clone https://github.com/roboticsengineer93/vins-fusion-gpu-tx2.git
 $ cd vins-fusion-gpu-tx2/
-$ installROS.sh -p  ros-melodic-desktop-full
-$ setupCatkinWorkspace.sh
+$ chmod a+x installROS.sh setupCatkinWorkspace.sh
+$ ./installROS.sh 
+$ ./setupCatkinWorkspace.sh
 ```
