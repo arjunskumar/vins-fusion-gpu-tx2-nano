@@ -132,6 +132,7 @@ $ cd ~/catkin_ws/src && git clone https://github.com/pjrambo/VINS-Fusion-gpu #GP
 
 $ sudo apt-get install ros-melodic-tf
 $ sudo apt-get install ros-melodic-image-transport
+$ sudo apt-get install ros-melodic-rviz
 
 # Edit CMakeLists.txt for loop_fusion and vins_estimator
 $ cd ~/catkin_ws/src/VINS-Fusion-gpu/loop_fusion && gedit CMakeLists.txt
