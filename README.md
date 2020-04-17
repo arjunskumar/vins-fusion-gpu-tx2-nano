@@ -91,6 +91,7 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
          ../
 $ make  # running in single core is good to resolve the compilation issues         
 $ sudo make install
+$ cd ../../ && sudo rm -rf opencv-3.4.1 # optional (can save 10GB Disk Space)
 $ pkg-config --modversion opencv # Check opencv Version
 ```
 ![opencv-img](./img/md3.png)
