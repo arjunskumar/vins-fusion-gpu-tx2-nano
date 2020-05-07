@@ -162,7 +162,7 @@ $ rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/vi_car/
 $ rosbag play YOUR_DATASET_FOLDER/car.bag
 ```
 
-## Jetson Nano (Optional Steps)
+## Jetson Nano (Optional Steps to improve the performance)
 
 To Add Swap memory of 4GB
 ```
@@ -172,12 +172,15 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 sudo swapon --show
 sudo cp /etc/fstab /etc/fstab.bak
-echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab ```
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab 
+```
 
 To lock Jetson Nano at its maximum frequency and power mode by running the following commands:
 
 ```
 sudo jetson_clocks
-sudo nvpmodel -m 0 ```
+sudo nvpmodel -m 0 
+```
+
 
 
