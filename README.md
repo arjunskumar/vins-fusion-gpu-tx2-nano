@@ -1,5 +1,5 @@
-# vins-fusion-gpu-tx2
-Installation step of vins-fusion gpu version on Nvidia Jetson TX2 ( JP 4.2.2)
+# vins-fusion-gpu-tx2-nano
+Installation step of vins-fusion gpu version on Nvidia Jetson TX2 and Jetson Nano ( JP 4.2.2)
 # Prerequisites
 
 
@@ -149,6 +149,7 @@ $ cd ~/catkin_ws/src/VINS-Fusion-gpu/vins_estimator && gedit CMakeLists.txt
 include(/usr/local/share/OpenCV/OpenCVConfig.cmake)
 
 $ cd ~/catkin_ws/
+$ source devel/setup.bash
 $ catkin_make
 ```
 ![vins-fusion-img](./img/md4.png)
@@ -160,3 +161,23 @@ $ rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion/config/vi_car/vi_car.yaml
 $ rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/vi_car/vi_car.yaml 
 $ rosbag play YOUR_DATASET_FOLDER/car.bag
 ```
+
+## Jetson Nano (Optional Steps)
+
+To Add Swap memory of 4GB
+```
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon --show
+sudo cp /etc/fstab /etc/fstab.bak
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab ```
+
+To lock Jetson Nano at its maximum frequency and power mode by running the following commands:
+
+```
+sudo jetson_clocks
+sudo nvpmodel -m 0 ```
+
+
