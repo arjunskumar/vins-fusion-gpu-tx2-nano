@@ -200,7 +200,6 @@ $ ./buildLibrealsense.sh
 ```
 
 ![Realsense-SDK](./img/md6.png)
-![vins-fusion-img](./img/md4.png)
 
 ```
 # Connect the Realsense camera to the Nano
@@ -211,8 +210,12 @@ $ ./realsense-viewer
 ![Relasense_viewer](./img/md7.png)
 
 ## Realsense-ROS
-``` $ git clone https://github.com/JetsonHacksNano/installRealSenseROS.git 
+
+```
+$ git clone https://github.com/JetsonHacksNano/installRealSenseROS.git 
 $ ./installRealSenseROS.sh <catkin_ws_name>
+
 # Turns off the USB autosuspend setting on the Nano so that the camera is always available.
-$ ./setupNano.sh ```
+
+$ ./setupNano.sh```
 
