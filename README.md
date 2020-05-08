@@ -189,12 +189,15 @@ Clone and install RealSense SDK for Cuda
 cd installLibrealsense
 ./installLibrealsense.sh -c
 # uild  Realsense . make sure camera is not connected
-./buildLibrealsense.sh ```
+./buildLibrealsense.sh 
+```
 
 ![Realsense-SDK](./img/md6.png)
 
-``` #Connect your Realsense camera to the Nano
 
+Connect the Realsense camera to the Nano
+
+```
 cd /usr/local/bin
 ./realsense-viewer
  ```
