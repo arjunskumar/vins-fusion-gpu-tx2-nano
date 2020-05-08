@@ -5,7 +5,9 @@ Installation step of vins-fusion gpu version on Nvidia Jetson TX2 and Jetson Nan
 
 ### Eigen 
 ```
-$ sudo apt-get remove libeigen3-dev #  Remove preb-uilt Eigen
+#  Remove pre-built Eigen
+
+$ sudo apt-get remove libeigen3-dev 
 $ cd ~/Downloads/
 $ wget -O eigen.zip http://bitbucket.org/eigen/eigen/get/3.3.7.zip #check version
 $ unzip eigen.zip -d eigen-3.3.7
@@ -24,7 +26,9 @@ $ tar zxf ceres-solver-1.14.0.tar.gz
 $ mkdir ceres-bin
 $ mkdir solver && cd ceres-bin
 $ cmake ../ceres-solver-1.14.0 -DEXPORT_BUILD_DIR=ON -DCMAKE_INSTALL_PREFIX="../solver" 
+
   #good for build without being root privileged and at wanted directory
+  
 $ make -j3 # 6 : number of cores
 $ make test
 $ make install
@@ -152,9 +156,7 @@ $ cd ~/catkin_ws/
 $ source devel/setup.bash
 $ catkin_make
 ```
-![vins-fusion-img](./img/md4.png)
-
-Download ![car.bag](https://drive.google.com/open?id=10t9H1u8pMGDOI6Q2w2uezEq5Ib-Z8tLz) to YOUR_DATASET_FOLDER. Open four terminals, run vins odometry, visual loop closure(optional), rviz and play the bag file respectively. Green path is VIO odometry; red path is odometry under visual loop closure.
+Download [car.bag](https://drive.google.com/open?id=10t9H1u8pMGDOI6Q2w2uezEq5Ib-Z8tLz) to YOUR_DATASET_FOLDER. Open four terminals, run vins odometry, visual loop closure(optional), rviz and play the bag file respectively. Green path is VIO odometry, red path is odometry under visual loop closure.
 ```
 $ roslaunch vins vins_rviz.launch
 $ rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion-gpu/config/vi_car/vi_car.yaml 
@@ -183,13 +185,18 @@ $ sudo nvpmodel -m 0
 ```
 
 ## Setup Realsense-d435i on Jetson Nano
-Clone and install RealSense SDK for Cuda
 
-```$ git clone https://github.com/jetsonhacksnano/installLibrealsense.git
+```
+# Clone and install RealSense SDK for Cuda
+
+$ git clone https://github.com/jetsonhacksnano/installLibrealsense.git
 $ cd installLibrealsense
 $ ./installLibrealsense.sh -c
+
 # Build  Realsense SDK. Make sure camera is not connected to nano.
+
 $ ./buildLibrealsense.sh 
+
 ```
 
 ![Realsense-SDK](./img/md6.png)
