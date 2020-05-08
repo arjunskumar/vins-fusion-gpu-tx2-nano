@@ -166,30 +166,30 @@ $ rosbag play YOUR_DATASET_FOLDER/car.bag
 
 ####  To Add Swap memory of 4GB
 ```
-sudo fallocate -l 4G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
-sudo swapon --show
-sudo cp /etc/fstab /etc/fstab.bak
-echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab 
+$ sudo fallocate -l 4G /swapfile
+$ sudo chmod 600 /swapfile
+$ sudo mkswap /swapfile
+$ sudo swapon /swapfile
+$ sudo swapon --show
+$ sudo cp /etc/fstab /etc/fstab.bak
+$ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab 
 ```
 
 ####  To lock Jetson Nano at its maximum frequency and power mode by running the following commands:
 
 ```
-sudo jetson_clocks
-sudo nvpmodel -m 0 
+$ sudo jetson_clocks
+$ sudo nvpmodel -m 0 
 ```
 
 ## Setup Realsense-d435i on Jetson Nano
 Clone and install RealSense SDK for Cuda
 
-```git clone https://github.com/jetsonhacksnano/installLibrealsense.git
-cd installLibrealsense
-./installLibrealsense.sh -c
-# uild  Realsense . make sure camera is not connected
-./buildLibrealsense.sh 
+```$ git clone https://github.com/jetsonhacksnano/installLibrealsense.git
+$ cd installLibrealsense
+$ ./installLibrealsense.sh -c
+# Build  Realsense SDK. Make sure camera is not connected to nano.
+$ ./buildLibrealsense.sh 
 ```
 
 ![Realsense-SDK](./img/md6.png)
@@ -198,8 +198,8 @@ cd installLibrealsense
 Connect the Realsense camera to the Nano
 
 ```
-cd /usr/local/bin
-./realsense-viewer
+$ cd /usr/local/bin
+$ ./realsense-viewer
  ```
  
  ![Relasense_viewer](./img/md7.png)
