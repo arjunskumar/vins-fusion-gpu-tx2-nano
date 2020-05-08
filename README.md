@@ -191,10 +191,13 @@ cd installLibrealsense
 # uild  Realsense . make sure camera is not connected
 ./buildLibrealsense.sh ```
 
-Connect your Realsense camera to the Nano.
+![Realsense-SDK](./img/md6.png)
 
-You may need to install updates.
+``` #Connect your Realsense camera to the Nano
 
 cd /usr/local/bin
 ./realsense-viewer
+ ```
+ 
+ ![Relasense_viewer](./img/md7.png)
 
