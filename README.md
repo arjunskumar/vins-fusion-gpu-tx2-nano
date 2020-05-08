@@ -207,6 +207,9 @@ $ ./realsense-viewer
 ## Realsense-ROS
 ```
 $ git clone https://github.com/JetsonHacksNano/installRealSenseROS.git 
-$ ./installRealSenseROS.sh <catkin_ws_name>```
+$ ./installRealSenseROS.sh <catkin_ws_name>
 # Turns off the USB autosuspend setting on the Nano so that the camera is always available.
 $ ./setupNano.sh
+```
+
+Add images ROS image here.
