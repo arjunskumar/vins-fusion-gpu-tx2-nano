@@ -220,4 +220,4 @@ $ ./installRealSenseROS.sh <catkin_ws_name>
 $ ./setupNano.sh
 ```
 
-Refer (this)[https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_Depth_D435i_IMU_Calib.pdf] for IMU calibration
+Refer [this](https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_Depth_D435i_IMU_Calib.pdf) for IMU calibration
