@@ -220,7 +220,11 @@ $ ./installRealSenseROS.sh <catkin_ws_name>
 $ ./setupNano.sh
 ```
 
+
+![Calibration Process](./img/md8.png)
+
 Refer [this](https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_Depth_D435i_IMU_Calib.pdf) for IMU calibration
+
 ### IMU calibration Steps
 ```
 sudo pip3 install pyrealsense2
@@ -228,8 +232,4 @@ sudo pip3 install pyrealsense2
 
 ### Calibration Process Overview
 
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
+![Calibration Process](./img/md9.png)
