@@ -223,13 +223,21 @@ $ ./setupNano.sh
 
 ![Calibration Process](./img/md8.png)
 
-Refer [this](https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_Depth_D435i_IMU_Calib.pdf) for IMU calibration
 
-### IMU calibration Steps
-```
-sudo pip3 install pyrealsense2
-```
+
+## IMU calibration Steps
+
+
 
 ### Calibration Process Overview
 
 ![Calibration Process](./img/md9.png)
+
+Refer [this document](https://github.com/roboticsengineer93/vins-fusion-gpu-tx2/blob/master/docs/RealSense_Depth_D435i_IMU_Calib.pdf) for IMU calibration
+
+```
+$ cd vins-fusion-gpu-tx2
+$ sudo pip3 install pyrealsense2
+$ python3 rs-imu-calibration.py
+```
+![Calibration output](./img/md10.png)
