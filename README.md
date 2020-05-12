@@ -241,3 +241,11 @@ $ sudo pip3 install pyrealsense2
 $ python3 rs-imu-calibration.py
 ```
 ![Calibration output](./img/md10.png)
+
+## Camera-IMU calibration
+
+```
+$ cd catkin_ws/src/
+$ git clone https://github.com/ethz-asl/kalibr
+$ cd .. && catkin_make
+```
