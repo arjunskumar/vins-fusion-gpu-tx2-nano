@@ -221,3 +221,15 @@ $ ./setupNano.sh
 ```
 
 Refer [this](https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_Depth_D435i_IMU_Calib.pdf) for IMU calibration
+### IMU calibration Steps
+```
+sudo pip3 install pyrealsense2
+```
+
+### Calibration Process Overview
+
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
