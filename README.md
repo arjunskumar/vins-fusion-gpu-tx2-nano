@@ -246,6 +246,7 @@ $ python3 rs-imu-calibration.py
 
 ```
 $ cd catkin_ws/src/
+$ sudo apt-get install libv4l-dev
 $ git clone https://github.com/ethz-asl/kalibr
 $ cd .. && catkin_make
 ```
