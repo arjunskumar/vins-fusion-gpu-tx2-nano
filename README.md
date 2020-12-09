@@ -104,7 +104,7 @@ pkg-config --modversion opencv # Check opencv Version
 ### ROS-Melodic
 ```
 cd ~/Downloads/
-git clone https://github.com/roboticsengineer93/vins-fusion-gpu-tx2.git
+git clone https://github.com/arjunskumar/vins-fusion-gpu-tx2.git
 cd vins-fusion-gpu-tx2/
 chmod a+x installROS.sh setupCatkinWorkspace.sh
 ./installROS.sh 
@@ -196,7 +196,7 @@ cd installLibrealsense
 
 # Build  Realsense SDK. Make sure camera is not connected to nano.
 
-./buildLibrealsense.sh 
+./buildLibrealsense.sh  [to built from source]
 
 ```
 
