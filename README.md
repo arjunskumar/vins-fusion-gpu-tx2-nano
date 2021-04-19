@@ -9,8 +9,8 @@ Installation step of vins-fusion gpu version on Nvidia Jetson TX2 and Jetson Nan
 
 sudo apt-get remove libeigen3-dev 
 cd ~/Downloads/
-wget -O eigen.zip http://bitbucket.org/eigen/eigen/get/3.3.7.zip #check version
-unzip eigen.zip -d eigen-3.3.7
+wget -O eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.zip #check version
+unzip eigen.zip
 mkdir eigen-build && cd eigen-build
 cmake ../eigen-3.3.7/ && sudo make install
 pkg-config --modversion eigen3 # Check Eigen Version
